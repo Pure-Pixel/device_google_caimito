@@ -174,9 +174,6 @@
     <integer name="config_stableDeviceDisplayWidth">1280</integer>
     <integer name="config_stableDeviceDisplayHeight">2856</integer>
 
-    <!-- The max vibration strength allowed in audio haptic channels. -->
-    <item name="config_hapticChannelMaxVibrationAmplitude" format="float" type="dimen">0.335</item>
-
     <!-- Align to camera cutout's height. -->
     <dimen name="status_bar_height_portrait">68dp</dimen>
     <!-- Since @dimen/status_bar_height_portrait is modified in overlay, need to restore its value
