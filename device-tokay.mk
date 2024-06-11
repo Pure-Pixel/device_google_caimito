@@ -72,17 +72,6 @@ include device/google/gs-common/modem/radio_ext/radio_ext.mk
 include device/google/gs-common/pixelsupport/pixelsupport.mk
 include device/google/gs-common/gril/hidl/1.7/gril_hidl.mk
 
-# Increment the SVN for any official public releases
-ifdef RELEASE_SVN_TOKAY
-TARGET_SVN ?= $(RELEASE_SVN_TOKAY)
-else
-# Set this for older releases that don't use build flag
-TARGET_SVN ?= 04
-endif
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=$(TARGET_SVN)
-
 # Set device family property for SMR
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.device_family=CM4KM4TK4TG4
