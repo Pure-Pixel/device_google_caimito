@@ -216,3 +216,5 @@ endif
 #Component Override for Pixel Troubleshooting App
 PRODUCT_COPY_FILES += \
     device/google/caimito/komodo/komodo-component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/komodo-component-overrides.xml
+
+PRODUCT_PACKAGES += fir-proximity-feature.xml

@@ -215,3 +215,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 #Component Override for Pixel Troubleshooting App
 PRODUCT_COPY_FILES += \
     device/google/caimito/caiman/caiman-component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/caiman-component-overrides.xml
+
+PRODUCT_PACKAGES += fir-proximity-feature.xml
