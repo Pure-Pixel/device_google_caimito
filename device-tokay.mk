@@ -180,10 +180,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
 
-# declare use of stereo spatialization
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.stereo_spatialization_enabled=true
-
 ifneq ($(USE_AUDIO_HAL_AIDL),true)
 # HIDL Sound Dose
 PRODUCT_PACKAGES += \
