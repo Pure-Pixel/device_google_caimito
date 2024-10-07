@@ -70,7 +70,6 @@ endif
 
 include device/google/caimito/audio/caiman/audio-tables.mk
 include device/google/zumapro/device-shipping-common.mk
-include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/caimito/fingerprint/ultrasonic_udfps.mk
@@ -350,8 +349,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
 
-# Media Performance Class 14
-PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
+# Media Performance Class 15
+PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=35
 
 # Display RRS default Config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.vendor.display.primary.boot_config=960x2142@120:120

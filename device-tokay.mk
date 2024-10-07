@@ -60,7 +60,6 @@ endif
 
 include device/google/caimito/audio/tokay/audio-tables.mk
 include device/google/zumapro/device-shipping-common.mk
-include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/caimito/fingerprint/ultrasonic_udfps.mk
@@ -335,8 +334,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
 
-# Media Performance Class 14
-PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
+# Media Performance Class 15
+PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=35
 
 # Vibrator HAL
 $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
