@@ -417,6 +417,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Support RIL Domain-selection
 SUPPORT_RIL_DOMAIN_SELECTION := true
 
+SUPPORT_VENDOR_SATELLITE_SERVICE := true
+
 # Keyboard height ratio and bottom padding in dp for portrait mode
 PRODUCT_PRODUCT_PROPERTIES += \
           ro.com.google.ime.kb_pad_port_b=8 \

@@ -448,6 +448,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Support RIL Domain-selection
 SUPPORT_RIL_DOMAIN_SELECTION := true
 
+SUPPORT_VENDOR_SATELLITE_SERVICE := true
+
 # Set support one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
