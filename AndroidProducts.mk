@@ -21,6 +21,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_komodo.mk \
     $(LOCAL_DIR)/aosp_komodo_fullmte.mk \
     $(LOCAL_DIR)/factory_komodo.mk \
+    $(LOCAL_DIR)/komodo.mk \
     $(LOCAL_DIR)/aosp_ripcurrentpro.mk \
     $(LOCAL_DIR)/aosp_ripcurrentpro_fullmte.mk \
     $(LOCAL_DIR)/factory_ripcurrentpro.mk \
@@ -33,6 +34,9 @@ PRODUCT_MAKEFILES := \
 COMMON_LUNCH_CHOICES := \
     aosp_caiman-trunk_staging-userdebug \
     aosp_komodo-trunk_staging-userdebug \
+    komodo-user \
+    komodo-userdebug \
+    komodo-eng \
     aosp_ripcurrentpro-trunk_staging-userdebug \
     aosp_ripcurrent24-trunk_staging-userdebug \
     aosp_tokay-trunk_staging-userdebug
