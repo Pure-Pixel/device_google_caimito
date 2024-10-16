@@ -35,5 +35,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := google/komodo/komodo:15/AP3A.241005.015/12366759:user/release-keys
 
-$(call inherit-product, vendor/google_devices/komodo/komodo.mk)
+$(call inherit-product, vendor/google_devices/komodo/komodo-vendor.mk)
 
