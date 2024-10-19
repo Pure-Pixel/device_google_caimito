@@ -456,6 +456,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Support RIL Domain-selection
 SUPPORT_RIL_DOMAIN_SELECTION := true
 
+SUPPORT_VENDOR_SATELLITE_SERVICE := true
+
 # ETM
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
