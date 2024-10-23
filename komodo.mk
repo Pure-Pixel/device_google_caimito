@@ -21,8 +21,10 @@ WITH_GMS := true
 $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 
-# Boot animation
-scr_resolution := 1080
+# Boot Animation
+$(call inherit-product, device/google/caimito/bootanimation/bootanimation.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1440
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
