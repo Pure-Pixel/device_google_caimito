@@ -26,3 +26,8 @@ $(call inherit-product, vendor/google_devices/caiman/caiman.mk)
 $(call inherit-product, vendor/gms/gms_full.mk)
 
 WITH_GMS := true
+
+# Boot Animation
+$(call inherit-product, device/google/caimito/bootanimation/bootanimation.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1440
