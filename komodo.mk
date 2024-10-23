@@ -47,5 +47,88 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := google/komodo/komodo:15/AP3A.241005.015/12366759:user/release-keys
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.clientidbase=android-google
+    
 $(call inherit-product, vendor/google_devices/komodo/komodo-vendor.mk)
 
+# Props
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    dalvik.vm.debug.alloc=0 \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.error.receiver.system.apps=com.google.android.gms \
+    ro.com.android.dataroaming=false \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    persist.sys.disable_rescue=true
+    
+# Enforce privapp-permissions whitelist
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.control_privapp_permissions=log
+    
+# Gboard configuration
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.ime.theme_id=5 \
+    ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
+
+# SetupWizard configuration
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.setupwizard.rotation_locked=true \
+    setupwizard.enable_assist_gesture_training=true \
+    setupwizard.theme=glif_v3_light \
+    setupwizard.feature.baseline_setupwizard_enabled=true \
+    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
+    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false
+
+# StorageManager configuration
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.storage_manager.show_opt_in=false
+
+# OPA configuration
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.opa.eligible_device=true
+
+# Google legal
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+
+# Google Play services configuration
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.error.receiver.system.apps=com.google.android.gms \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent
+
+# TextClassifier
+PRODUCT_PACKAGES += \
+	libtextclassifier_annotator_en_model \
+	libtextclassifier_annotator_universal_model \
+	libtextclassifier_actions_suggestions_universal_model \
+	libtextclassifier_lang_id_model
+        
+# Use gestures by default
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
+# Storage manager
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.storage_manager.enabled=true
+
+# Media
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    media.recorder.show_manufacturer_and_model=true
+
+# One Handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode?=true \
+            
+# Pixel customization
+TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_QUICK_TAP ?= false
+TARGET_SUPPORTS_CALL_RECORDING ?= true    
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.usb.config=adb
