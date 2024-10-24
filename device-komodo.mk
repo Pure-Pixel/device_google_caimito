@@ -160,6 +160,14 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_komodo_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_EU.csv \
         $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_komodo_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_US.csv
 
+
+# For Google Camera
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/sysconfig/the_experiences.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/the_experiences.xml
+# Pixel Camera Services / Camera extensions
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/permissions/permissions_com.google.android.apps.camera.services.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/permissions_com.google.android.apps.camera.services.xml
+    
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gms.dck.eligible_wcc=3 \
