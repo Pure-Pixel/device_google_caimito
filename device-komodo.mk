@@ -281,6 +281,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/caimito/powerstats/komodo
 
+# wireless_charger HAL service
+include device/google/gs-common/wireless_charger/wireless_charger.mk
+
 # WiFi Overlay
 PRODUCT_PACKAGES += \
     WifiOverlay2024
