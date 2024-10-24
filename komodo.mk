@@ -18,8 +18,9 @@ $(call inherit-product, device/google/caimito/aosp_komodo.mk)
 
 # Gapps
 WITH_GMS := true
-$(call inherit-product-if-exists, vendor/google/gms/config.mk)
-$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+$(call inherit-product, vendor/google/gms/gms_full.mk)
+
+RELEASE_PIXEL_2024_ENABLED := true
 
 # Boot Animation
 $(call inherit-product, device/google/caimito/bootanimation/bootanimation.mk)
