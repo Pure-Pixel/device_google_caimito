@@ -18,7 +18,7 @@ $(call inherit-product, device/google/caimito/aosp_komodo.mk)
 
 # Gapps
 WITH_GMS := true
-$(call inherit-product, vendor/google/gms/gms_full.mk)
+$(call inherit-product, vendor/gms/gms_full.mk)
 
 RELEASE_PIXEL_2024_ENABLED := true
 
