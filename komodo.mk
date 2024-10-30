@@ -116,8 +116,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.show_digital_warranty=false \
     setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
     setupwizard.feature.show_support_link_in_deferred_setup=false \
-    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
-    setupwizard.theme=glif_v4_light
+    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true
 
 # StorageManager configuration
 PRODUCT_PRODUCT_PROPERTIES += \
