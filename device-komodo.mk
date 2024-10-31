@@ -450,3 +450,23 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES := $(filter-out ro.vendor.build.svn=% , $(PRODUCT_VENDOR_PROPERTIES))
 
 PRODUCT_PACKAGES += fir-proximity-feature.xml
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+	system/app/GoogleBluetoothLegacyMigration/GoogleBluetoothLegacyMigration.apk \
+	system/bin/health \
+	system/etc/permissions/custom-google-platform.xml \
+	system/etc/sysconfig/GoogleCellBroadcast_config.xml \
+	system/etc/sysconfig/custom-google-framework-sysconfig.xml \
+	system/etc/sysconfig/custom-google-hiddenapi-package-whitelist.xml \
+	system/etc/textclassifier/actions_suggestions.universal.model \
+	system/etc/textclassifier/lang_id.model \
+	system/etc/textclassifier/textclassifier.en.model \
+	system/etc/textclassifier/textclassifier.universal.model \
+	system/lib64/libcuttlefish_command_util.so \
+	system/lib64/libcuttlefish_fs.so \
+	system/lib64/libcuttlefish_run_cvd_proto.so \
+	system/lib64/libcuttlefish_utils.so \
+	system/lib64/libcuttlefish_utils_result.so \
+	system/lib64/libfruit.so \
+	system/media/bootanimation.zip
+
