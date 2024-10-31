@@ -414,11 +414,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
-ifeq ($(RELEASE_PIXEL_BROADCAST_ENABLED), true)
+# Bluetooth LE Audio Broadcast
 PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.bap.broadcast.assist.enabled=true \
 	bluetooth.profile.bap.broadcast.source.enabled=true
-endif
 
 # LE Audio switcher in developer options
 PRODUCT_PRODUCT_PROPERTIES += \
