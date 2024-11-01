@@ -468,5 +468,10 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 	system/lib64/libcuttlefish_utils.so \
 	system/lib64/libcuttlefish_utils_result.so \
 	system/lib64/libfruit.so \
-	system/media/bootanimation.zip
+	system/media/bootanimation.zip \
+	system/app/GoogleExtShared/GoogleExtShared.apk \
+	system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
+	system/etc/permissions/privapp-permissions-google.xml \
+	system/priv-app/TagGoogle/TagGoogle.apk
+
 
