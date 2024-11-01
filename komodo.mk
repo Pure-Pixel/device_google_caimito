@@ -21,6 +21,10 @@ WITH_GMS := true
 $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 $(call inherit-product-if-exists, vendor/google/pixel-additional/config.mk)
+
+# Themed icons for Pixel Launcher
+$(call inherit-product, vendor/google/overlays/ThemeIcons/config.mk)
+
 TARGET_SUPPORTS_GOOGLE_CAMERA := true
 TARGET_GOOGLE_CAMERA_LARGE_RAM := true
 TARGET_SUPPORTS_SATELLITE_SOS := true
