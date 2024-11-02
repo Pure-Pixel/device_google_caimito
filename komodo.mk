@@ -18,8 +18,7 @@ $(call inherit-product, device/google/caimito/aosp_komodo.mk)
 
 # Gapps
 WITH_GMS := true
-$(call inherit-product-if-exists, vendor/google/gms/config.mk)
-$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+$(call inherit-product, vendor/google/gms/products/gms.mk)
 $(call inherit-product-if-exists, vendor/google/pixel-additional/config.mk)
 
 # Themed icons for Pixel Launcher
