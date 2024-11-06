@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+SHIPPING_API_LEVEL := 34
+
 ifdef RELEASE_GOOGLE_TOKAY_RADIO_DIR
 RELEASE_GOOGLE_PRODUCT_RADIO_DIR ?= $(RELEASE_GOOGLE_TOKAY_RADIO_DIR)
 endif
@@ -27,6 +29,9 @@ $(call soong_config_set,caimito_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOA
 ifdef RELEASE_KERNEL_TOKAY_DIR
 TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_TOKAY_DIR)
 TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_TOKAY_DIR)/kernel-headers
+
+include device/google/caimito/device-caimito-16k-common.mk
+
 else
 TARGET_KERNEL_DIR ?= device/google/caimito-kernels/6.1/24D1
 TARGET_BOARD_KERNEL_HEADERS ?= device/google/caimito-kernels/6.1/24D1/kernel-headers
@@ -57,6 +62,7 @@ include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/caimito/fingerprint/ultrasonic_udfps.mk
 include device/google/gs-common/modem/radio_ext/radio_ext.mk
 include device/google/gs-common/pixelsupport/pixelsupport.mk
+include device/google/gs-common/gril/hidl/1.7/gril_hidl.mk
 
 # Increment the SVN for any official public releases
 ifdef RELEASE_SVN_TOKAY
@@ -68,6 +74,25 @@ endif
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=$(TARGET_SVN)
+
+# Set device family property for SMR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.device_family=CM4KM4TK4TG4
+
+# Set build properties for SMR builds
+ifeq ($(RELEASE_IS_SMR), true)
+    ifneq (,$(RELEASE_BASE_OS_TOKAY))
+        PRODUCT_BASE_OS := $(RELEASE_BASE_OS_TOKAY)
+    endif
+endif
+
+# Set build properties for EMR builds
+ifeq ($(RELEASE_IS_EMR), true)
+    ifneq (,$(RELEASE_BASE_OS_TOKAY))
+        PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_TOKAY)
+    endif
+endif
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,tokay)
@@ -277,8 +302,11 @@ PRODUCT_PACKAGES += gps.cfg
 # For GPS property
 PRODUCT_VENDOR_PROPERTIES += ro.vendor.gps.pps.enabled=true
 
-# Display LBE
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
+# Display function property settings
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    vendor.display.lbe.supported=1 \
+    ro.vendor.primarydisplay.google-tk4c.temperature_path=/dev/thermal/tz-by-name/disp_therm/temp \
+    ro.vendor.display.read_temp_interval=30
 
 #Thermal VT estimator
 PRODUCT_PACKAGES += \
@@ -324,6 +352,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.vibrator.hal.context.cooldowntime=1600 \
     persist.vendor.vibrator.hal.context.settlingtime=5000 \
     ro.vendor.vibrator.hal.pm.activetimeout=5
+
+# Override Output Distortion Gain
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.audio.hapticgenerator.distortion.output.gain=0.48
 
 # PKVM Memory Reclaim
 PRODUCT_VENDOR_PROPERTIES += \
@@ -376,7 +408,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-   persist.bluetooth.leaudio.allow_list=SM-R510
+   persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
 
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -403,17 +435,34 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
 endif
 
-# Connectivity Resources Overlay
+# Connectivity Resources Overlay for Thread host settings
 PRODUCT_PACKAGES += \
     ConnectivityResourcesOverlayCaimitoOverride
+
+# Thread Dispatcher enablement in Bluetooth HAL
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.thread_dispatcher.enabled=false
 
 #Component Override for Pixel Troubleshooting App
 PRODUCT_COPY_FILES += \
     device/google/caimito/tokay/tokay-component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/tokay-component-overrides.xml
 
+# Bluetooth device id
+# Tokay: 0x4112
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.thread_dispatcher.enabled=true
+    bluetooth.device_id.product_id=16658
+
+# Set support for LEA multicodec
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.core.le_audio.codec_extension_aidl.enabled=true
 
 # Reduce lmkd aggressiveness
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.swap_free_low_percentage=7
+
+# LE Audio configuration scenarios
+PRODUCT_COPY_FILES += \
+    device/google/caimito/bluetooth/audio_set_scenarios.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_scenarios.json
+
+PRODUCT_COPY_FILES += \
+    device/google/caimito/bluetooth/audio_set_configurations.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_configurations.json
