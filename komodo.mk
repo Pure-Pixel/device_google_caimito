@@ -20,6 +20,7 @@ $(call inherit-product, device/google/caimito/aosp_komodo.mk)
 WITH_GMS := true
 $(call inherit-product, vendor/google/gms/products/gms.mk)
 $(call inherit-product-if-exists, vendor/google/pixel-additional/config.mk)
+$(call inherit-product, device/google/caimito/pure/configs/common.mk)
 
 # Themed icons for Pixel Launcher
 $(call inherit-product, vendor/google/overlays/ThemeIcons/config.mk)
