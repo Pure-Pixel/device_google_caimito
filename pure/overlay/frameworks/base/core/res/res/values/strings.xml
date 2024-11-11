@@ -27,13 +27,13 @@
         <item></item>
         <item></item>
         <item>Move your finger. Try again.</item>
-        <item>Finger already enrolled use a different finger.</item>
-        <item>Poor image quality. Try again.</item>
+        <item>Finger already enrolled use a different finger dumbass.</item>
+        <item>Poor image quality WTF. Try again.</item>
         <item></item>
-        <item>Poor image quality. Try again.</item>
+        <item>Seriously? WTF Poor image quality. Try again.</item>
         <item></item>
         <item></item>
-        <item>Smudge detected, clean screen. Try again.</item>
+        <item>Grubby digits detected, clean screen. Try again.</item>
         <item>Failure to read image. Try again.</item>
         <item></item>
         <item></item>
@@ -41,7 +41,7 @@
         <item></item>
         <item></item>
         <item></item>
-        <item>Re-enroll required.</item>
+        <item>Re-enroll required dumbass.</item>
     </string-array>
 
     <string-array name="fingerprint_error_vendor">
@@ -51,7 +51,7 @@
         <item></item>
         <item></item>
         <item></item>
-        <item>Bad data. Try again.</item>
+        <item>It's not you, it's us. Bad data. Try again.</item>
         <item>Failed to enroll finger. Try again.</item>
     </string-array>
 </resources>
