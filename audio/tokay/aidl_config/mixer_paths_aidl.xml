@@ -1048,6 +1048,10 @@
     <path name="haptic-playback-0 -> usb" />
   </path>
 
+  <path name="hostless-playback-0 -> speaker">
+    <ctl name="TDM_0_RX Mixer NoHost1" value="1" />
+  </path>
+
   <!-- audio capture dynamic route -->
   <path name="microphones -> primary-capture-0">
     <ctl name="EP1 TX Mixer INTERNAL_MIC_TX" value="1" />
@@ -1341,6 +1345,12 @@
     <ctl name="Fast Use Case Switch Enable" value="1" />
     <ctl name="R Fast Use Case Delta File" value="fast_switch2.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" /-->
+  </path>
+
+  <path name="speaker (ALWAYS_AVAILABLE_DISPLAY)">
+    <ctl name="R Main AMP Enable Switch" value="1" />
+    <ctl name="R Boost Peak Current Limit" value="1.80A" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker-safe">
