@@ -245,3 +245,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Thread HAL
 PRODUCT_PACKAGES += \
    com.google.caimito.hardware.threadnetwork
+
+# Enable APF by default
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.powerhal.apf_disabled=false \
+    vendor.powerhal.apf_enabled=true
