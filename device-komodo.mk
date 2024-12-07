@@ -455,6 +455,9 @@ SUPPORT_RIL_DOMAIN_SELECTION := true
 
 SUPPORT_VENDOR_SATELLITE_SERVICE := true
 
+# Support NTN(satellite) with dual SIM
+NTN_DUAL_SIM := true
+
 # Set support one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true

@@ -424,6 +424,9 @@ SUPPORT_RIL_DOMAIN_SELECTION := true
 
 SUPPORT_VENDOR_SATELLITE_SERVICE := true
 
+# Support NTN(satellite) with dual SIM
+NTN_DUAL_SIM := true
+
 # Keyboard height ratio and bottom padding in dp for portrait mode
 PRODUCT_PRODUCT_PROPERTIES += \
           ro.com.google.ime.kb_pad_port_b=8 \
