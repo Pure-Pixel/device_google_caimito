@@ -1109,6 +1109,13 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "TAUClampBoost",
+      "Duration": 5000,
+      "Value": "765",
+      "EnableProperty": "vendor.powerhal.apf_disabled"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "FGUClampBoost",
       "Duration": 5000,
       "Value": "159"
@@ -1181,7 +1188,8 @@
       "PowerHint": "LAUNCH",
       "Node": "TAAutoPreferFit",
       "Duration": 5000,
-      "Value": "1"
+      "Value": "1",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
@@ -1191,33 +1199,45 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "TAPreferredIdleMaskMid",
+      "Duration": 5000,
+      "Value": "0xff",
+      "EnableProperty": "vendor.powerhal.apf_disabled"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceEnable",
       "Duration": 5000,
-      "Value": "1"
+      "Value": "1",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceHighValue",
-       "Duration": 5000,
-       "Value": "765"
+      "Duration": 5000,
+      "Value": "765",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceHighPrio",
       "Duration": 5000,
-      "Value": "110"
+      "Value": "110",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceMidValue",
-       "Duration": 5000,
-       "Value": "590"
+      "Duration": 5000,
+      "Value": "590",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceMidPrio",
       "Duration": 5000,
-      "Value": "139"
+      "Value": "139",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
@@ -3472,13 +3492,15 @@
       "PowerHint": "GAME",
       "Node": "AutoMigrationMarginsEnable",
       "Duration": 0,
-      "Value": "1"
+      "Value": "1",
+      "EnableProperty": "vendor.powerhal.amm_enabled"
     },
     {
       "PowerHint": "GAME",
       "Node": "AutoDvfsHeadroomEnable",
       "Duration": 0,
-      "Value": "1"
+      "Value": "1",
+      "EnableProperty": "vendor.powerhal.amm_enabled"
     },
     {
       "PowerHint": "GAME",
@@ -3779,6 +3801,18 @@
       "Node": "MIFTargetLoad",
       "Duration": 0,
       "Value": "20 80"
+    },
+    {
+      "PowerHint": "DISABLE_AMM",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "DISABLE_AMM",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
     }
   ],
   "GpuSysfsPath" : "/sys/devices/platform/1f000000.mali",
