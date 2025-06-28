@@ -58,7 +58,6 @@ ifeq ($(filter factory_tokay, $(TARGET_PRODUCT)),)
 endif
 
 # display
-DEVICE_PACKAGE_OVERLAYS += device/google/caimito/tokay/overlay
 
 ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL),true)
 USE_AUDIO_HAL_AIDL := true
@@ -108,9 +107,6 @@ $(call soong_config_set,lyric,camera_hardware,tokay)
 $(call soong_config_set,lyric,tuning_product,tokay)
 $(call soong_config_set,google3a_config,target_device,tokay)
 
-# display
-DEVICE_PACKAGE_OVERLAYS += device/google/caimito/tokay/overlay
-
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/caimito/conf/init.tokay.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.tokay.rc
@@ -130,8 +126,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
-	android.hardware.nfc-service.st \
-	NfcOverlayTokay
+	android.hardware.nfc-service.st
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -184,14 +179,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/caimito/powerstats/tokay
 
-# WiFi Overlay
-PRODUCT_PACKAGES += \
-    WifiOverlay2024
-
-# Settings Overlay
-PRODUCT_PACKAGES += \
-    SettingsTokayOverlay
-
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/caimito/prebuilts
 
@@ -225,10 +212,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
 endif
-
-# Connectivity Resources Overlay for Thread host settings
-PRODUCT_PACKAGES += \
-    ConnectivityResourcesOverlayCaimitoOverride
 
 #Component Override for Pixel Troubleshooting App
 PRODUCT_COPY_FILES += \
