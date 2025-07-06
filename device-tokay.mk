@@ -96,10 +96,6 @@ $(call soong_config_set,lyric,camera_hardware,tokay)
 $(call soong_config_set,lyric,tuning_product,tokay)
 $(call soong_config_set,google3a_config,target_device,tokay)
 
-# Init files
-PRODUCT_COPY_FILES += \
-	device/google/caimito/conf/init.tokay.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.tokay.rc
-
 # Recovery files
 PRODUCT_COPY_FILES += \
         device/google/caimito/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.tokay.rc

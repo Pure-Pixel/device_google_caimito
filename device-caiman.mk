@@ -106,10 +106,6 @@ $(call soong_config_set,lyric,camera_hardware,caiman)
 $(call soong_config_set,lyric,tuning_product,caiman)
 $(call soong_config_set,google3a_config,target_device,caiman)
 
-# Init files
-PRODUCT_COPY_FILES += \
-	device/google/caimito/conf/init.caiman.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.caiman.rc
-
 # Recovery files
 PRODUCT_COPY_FILES += \
         device/google/caimito/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.caiman.rc
