@@ -180,7 +180,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # Location
 PRODUCT_SOONG_NAMESPACES += device/google/caimito/location/caiman
 $(call soong_config_set, gpssdk, buildtype, $(TARGET_BUILD_VARIANT))
-PRODUCT_PACKAGES += gps.cfg
 
 #Thermal VT estimator
 PRODUCT_PACKAGES += \
