@@ -24,3 +24,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 $(call inherit-product, vendor/google_devices/caiman/caiman.mk)
 $(call inherit-product, vendor/gms/gms_full.mk)
+
+WITH_GMS := true
